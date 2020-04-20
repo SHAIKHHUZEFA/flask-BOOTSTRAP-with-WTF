@@ -1,0 +1,20 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+WTF Form
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" action="/">
+        <d1>
+            {{form.csrf_token}}
+            {{wtf.form_field(form.username)}}
+            {{wtf.form_field(form.password)}}
+            <input class="btn btn-primary" type="submit" value="Login">
+        </d1>
+    </form>
+</div>
+{% endblock %}
+
